@@ -1,0 +1,27 @@
+<table class="table table-striped">
+    <thead>
+        <th>Odd/Even</th>
+        <th>Room Number</th>
+        <th>Room Type</th>
+        <th>Room Price</th>
+        <th>Room CheckIn</th>
+        <th>Room CheckOut</th>
+        <th>Room Rating</th>
+    </thead>
+    <tbody>
+        @for(roomData of roomsData; track roomData; let odd = $odd, even = $even){
+            <tr [ngClass]="even ? 'even' :'odd' ">
+               <td>{{odd ? "odd" : "even"}}</td>
+                <td>{{roomData.roomNumber}}</td>
+                <td>{{roomData.roomType}}</td>
+                <td>{{roomData.amenities}}</td>
+                <td>{{roomData.price}}</td>
+                <td>{{roomData.checkInTime | date}}</td>
+                <td>{{roomData.checkOutTime | date}}</td>
+                <td>{{roomData.rating | number : '1.1'}}</td>
+            </tr>
+        }
+        
+    </tbody>
+</table>
+
