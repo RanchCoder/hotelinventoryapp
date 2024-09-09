@@ -1,0 +1,20 @@
+ngOnInit life cycle hook is called after the component is initialized.
+component is initialized once the constructor is called.
+Constructor must not have any blocking code.
+All initialization must happen in ngOnInIt
+
+Component communication is when multiple component interacting with each other.
+ways -> @Input & @Output
+@ViewChild and @ContentChild
+Services 
+
+@Input
+input is used to declare a property in the component class that will act as a valid html property on the html tag attribute of that child component.
+The input is used on child tag to receive input from the Parent component.
+(parent component is the component that embed the child component.)
+
+@Output is used to pass data from child to parent.
+@output is an event. i.e it emits an event that needs listening at the parent's end.
+
+@Output() selectedRoom = new EventEmitter<RoomList>();
+The type in the <> brackets defines the type of the data that will be emitted by the output event emitter.

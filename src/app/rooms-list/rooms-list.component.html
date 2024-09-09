@@ -3,10 +3,12 @@
         <th>Odd/Even</th>
         <th>Room Number</th>
         <th>Room Type</th>
+        <th>Room Detail</th>
         <th>Room Price</th>
         <th>Room CheckIn</th>
         <th>Room CheckOut</th>
         <th>Room Rating</th>
+        <th>Action</th>
     </thead>
     <tbody>
         @for(roomData of roomsData; track roomData; let odd = $odd, even = $even){
@@ -19,6 +21,7 @@
                 <td>{{roomData.checkInTime | date}}</td>
                 <td>{{roomData.checkOutTime | date}}</td>
                 <td>{{roomData.rating | number : '1.1'}}</td>
+                <td><button (click)="selectedRoomInfo(roomData)" class="btn btn-primary">Select</button></td>
             </tr>
         }
         

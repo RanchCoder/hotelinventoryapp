@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input , Output} from '@angular/core';
 import { RoomList } from '../rooms/room';
 import {CommonModule} from '@angular/common';
 @Component({
@@ -9,6 +9,12 @@ import {CommonModule} from '@angular/common';
   styleUrl: './rooms-list.component.scss'
 })
 export class RoomsListComponent {
-    @Input() roomsData : RoomList[] = [];
 
+    @Input() roomsData : RoomList[] = [];
+    @Output() selectedRoom  = new EventEmitter<RoomList>();
+
+
+    selectedRoomInfo(room : RoomList) {
+        this.selectedRoom.emit(room);
+      }
 }

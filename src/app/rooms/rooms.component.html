@@ -1,8 +1,8 @@
 <p>Room component</p>
 
-<div @if(showRoomDetails)>
+<!-- <div @if(showRoomDetails)> -->
    <h1>Total Room | {{room.totalRoom}}</h1>
    <h1>Booked Room | {{room.bookedRoom}}</h1>
 
-   <app-rooms-list [roomsData]="roomList"></app-rooms-list>
-</div>
+   <app-rooms-list [roomsData]="roomList" (selectedRoom)="fetchSelectedRoomInfo($event)"></app-rooms-list>
+<!-- </div> -->
